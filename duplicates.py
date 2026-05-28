@@ -6,6 +6,7 @@ data={
 df = pd.DataFrame(data)
 print("Duplicate Rows:")
 print(df.duplicated())
+
 # Output:
 # 0     False
 # 1     False
