@@ -1,44 +1,190 @@
 # Data Cleaning and Pandas Fundamentals
 
-## Objective
-To perform basic data cleaning and understand Pandas fundamentals using Python.
+## Introduction
+
+This project demonstrates Data Cleaning and Pandas Fundamentals using Python. It covers handling missing values, checking data types, removing duplicate records, filtering datasets, sorting values, and saving cleaned data using the Pandas library.
 
 ---
 
-## Tools Used
-- Python
-- Pandas
-- NumPy
+# Technologies Used
+
+* Python
+* Pandas
+* CSV Files
 
 ---
 
-## Topics Covered
+# Topics Covered
 
-### Data Cleaning
-- Handling missing values
-- Removing duplicate records
-
-### Pandas Fundamentals
-- Data inspection using info()
-- Checking data types using dtypes
-- Selecting data using select_dtypes()
+* Missing Values
+* Data Types
+* Duplicate Data
+* Filtering Data
+* Sorting Data
+* CSV Operations
 
 ---
 
-### Steps Performed
-- Loaded dataset using Pandas
-- Explored dataset structure
-- Checked missing values
-- Handled missing values
-- Identified duplicate records
-- Removed duplicates
-- Checked data types
-- Selected numeric and categorical columns
+# Importing Pandas
+
+```python
+import pandas as pd
+```
 
 ---
 
-## Files in Repository
-- data_cleaning.py
+# Loading Dataset
 
-## Conclusion
-This project demonstrates basic data cleaning and Pandas fundamentals. It shows how raw data is inspected, cleaned, and organized using Pandas in Python.
+```python
+df = pd.read_csv("sample_data.csv")
+
+print(df)
+```
+
+---
+
+# Display First Rows
+
+```python
+print(df.head())
+```
+
+---
+
+# Dataset Information
+
+```python
+print(df.info())
+```
+
+---
+
+# Missing Values
+
+## Check Missing Values
+
+```python
+print(df.isnull())
+```
+
+## Count Missing Values
+
+```python
+print(df.isnull().sum())
+```
+
+## Fill Missing Values
+
+```python
+df["Age"] = df["Age"].fillna(df["Age"].mean())
+
+print(df)
+```
+
+## Remove Missing Values
+
+```python
+df.dropna(inplace=True)
+
+print(df)
+```
+
+---
+
+# Data Types
+
+## Check Data Types
+
+```python
+print(df.dtypes)
+```
+
+## Change Data Type
+
+```python
+df["Age"] = df["Age"].astype(int)
+
+print(df.dtypes)
+```
+
+---
+
+# Duplicate Data
+
+## Check Duplicate Rows
+
+```python
+print(df.duplicated())
+```
+
+## Remove Duplicate Rows
+
+```python
+df.drop_duplicates(inplace=True)
+
+print(df)
+```
+
+---
+
+# Selecting Columns
+
+## Single Column
+
+```python
+print(df["Name"])
+```
+
+## Multiple Columns
+
+```python
+print(df[["Name", "Age"]])
+```
+
+---
+
+# Filtering Data
+
+```python
+print(df[df["Age"] > 25])
+```
+
+---
+
+# Sorting Data
+
+## Ascending Order
+
+```python
+print(df.sort_values("Age"))
+```
+
+## Descending Order
+
+```python
+print(df.sort_values("Age", ascending=False))
+```
+
+---
+
+# Adding New Column
+
+```python
+df["Salary"] = [50000, 60000, 45000, 70000]
+
+print(df)
+```
+
+---
+
+# Saving Cleaned Data
+
+```python
+df.to_csv("cleaned_data.csv", index=False)
+```
+
+---
+
+# Conclusion
+
+This project explains the fundamentals of Pandas and Data Cleaning techniques in Python. It demonstrates handling missing values, changing data types, removing duplicates, filtering datasets, sorting data, and saving cleaned data for further analysis.
