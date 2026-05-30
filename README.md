@@ -185,6 +185,19 @@ df.to_csv("cleaned_data.csv", index=False)
 
 ---
 
+## Data Cleaning Cycle
+
+![Data Cleaning Cycle](images/data_cleaning_cycle.png)
+
+## Data Cleaning Steps
+
+![Data Cleaning Steps](images/data_cleaning_steps.png)
+
+## Data Cleaning Workflow
+
+![Data Cleaning Workflow](images/data_cleaning_workflow.png)
+
+
 # Conclusion
 
 This project explains the fundamentals of Pandas and Data Cleaning techniques in Python. It demonstrates handling missing values, changing data types, removing duplicates, filtering datasets, sorting data, and saving cleaned data for further analysis.
